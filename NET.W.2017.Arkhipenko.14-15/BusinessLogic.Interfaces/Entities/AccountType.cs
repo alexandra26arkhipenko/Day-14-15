@@ -4,8 +4,10 @@ using System.Text;
 
 namespace BusinessLogic.Interfaces
 {
-    public interface IAccountCreater
+    public enum AccountType
     {
-     
+        Base,
+        Gold,
+        Platinum
     }
 }
