@@ -8,7 +8,7 @@
             BonusValue = 3;
         }
 
-        public override string ToString() => "BaseAccount" + base.ToString();
+        public override string ToString() => "PlarimunAccount" + base.ToString();
         public override int CalculatePointsForAddAmount(int bonusValue) => 30 * bonusValue + 20;
         public override int CalculatePointsForDivAmount(int bonusValue) => 30 * bonusValue + 20;
     }

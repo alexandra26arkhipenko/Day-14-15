@@ -3,7 +3,7 @@ using BusinessLogic.Interfaces.Interfaces;
 
 namespace BusinessLogic.ServiceImplementation
 {
-    class AccountGenerateIdNumber: IAccountGenerateIdNumber
+    public class AccountGenerateIdNumber: IAccountGenerateIdNumber
     {
         public string GenerateId()
         {

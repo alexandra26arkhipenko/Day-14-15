@@ -10,7 +10,7 @@ namespace BusinessLogic.ServiceImplementation
     {
         private const int BaseAccountBonusValue = 1;
         private const int GoldAccountBonusValue = 50;
-        private const int PlatinumAccountBonusValue = 100;
+        private const int PlatinumAccountBonusValue = 1000;
 
         private readonly IAccountGenerateIdNumber _accountGenerateIdNumber;
         private readonly IRepository _accountRepsitory;

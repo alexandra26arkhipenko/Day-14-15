@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLayer", "DataAcce
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLayer.Interfaces", "DataAccessLayer.Interfaces\DataAccessLayer.Interfaces.csproj", "{96EF0F6D-55E8-4E4F-9626-EE3159402621}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyResolver", "DependencyResolver\DependencyResolver.csproj", "{9821AC81-A4C2-4559-ABD3-40ED2E9FA7C3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{96EF0F6D-55E8-4E4F-9626-EE3159402621}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96EF0F6D-55E8-4E4F-9626-EE3159402621}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96EF0F6D-55E8-4E4F-9626-EE3159402621}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9821AC81-A4C2-4559-ABD3-40ED2E9FA7C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9821AC81-A4C2-4559-ABD3-40ED2E9FA7C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9821AC81-A4C2-4559-ABD3-40ED2E9FA7C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9821AC81-A4C2-4559-ABD3-40ED2E9FA7C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

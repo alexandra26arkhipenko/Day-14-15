@@ -8,7 +8,7 @@ using DataAccessLayer.Interfaces.IRepository;
 
 namespace DataAccessLayer.Repository
 {
-    class BinaryFile : IRepository
+    public class BinaryFile : IRepository
     {
         private readonly string _path;
         private readonly List<DalAccount> _accounts = new List<DalAccount>();
