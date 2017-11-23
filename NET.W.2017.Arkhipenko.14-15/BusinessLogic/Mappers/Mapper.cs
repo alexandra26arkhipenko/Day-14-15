@@ -1,5 +1,5 @@
 ﻿using System;
-using BusinessLogic.Interfaces;
+using BusinessLogic.Interfaces.Entities;
 using DataAccessLayer.Interfaces;
 
 
@@ -7,7 +7,7 @@ namespace BusinessLogic.Mappers
 {
     public static class Mapper
     {
-        public static Account ToBllAccount(this DalAccount dalAccount) =>
+        public static Account ConvertToAccount(this DalAccount dalAccount) =>
             (Account)Activator.CreateInstance(
                 dalAccount.AccountType,
                 dalAccount.Id,
@@ -16,7 +16,7 @@ namespace BusinessLogic.Mappers
                 dalAccount.Amount,
                 dalAccount.Points);
 
-        public static DalAccount ToDalAccount(this Account account) =>
+        public static DalAccount ConvertToDalAccount(this Account account) =>
             new DalAccount
             {
                 AccountType = account.GetType(),

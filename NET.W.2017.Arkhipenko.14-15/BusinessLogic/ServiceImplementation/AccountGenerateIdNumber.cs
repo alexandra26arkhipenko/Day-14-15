@@ -1,10 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using BusinessLogic.Interfaces.Interfaces;
 
-namespace BusinessLogic
+namespace BusinessLogic.ServiceImplementation
 {
-    class AccountGenerateIdNumber
+    class AccountGenerateIdNumber: IAccountGenerateIdNumber
     {
+        public string GenerateId()
+        {
+            return Guid.NewGuid().ToString();
+        }
     }
 }

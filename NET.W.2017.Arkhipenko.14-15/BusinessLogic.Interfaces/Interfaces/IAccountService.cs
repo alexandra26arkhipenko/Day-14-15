@@ -1,10 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using BusinessLogic.Interfaces.Entities;
 
-namespace BusinessLogic.Interfaces
+namespace BusinessLogic.Interfaces.Interfaces
 {
-    interface IAccountService
+    public interface IAccountService
     {
+        void AddMoney(Account account, decimal money);
+        void DivMoney(Account account, decimal money);
+        void CloseAccout(Account account);
+        //IEnumerable<Account> GetAllAccounts();
+        Account CreateAccount(AccountType accountType, string firstName, string lastName, decimal amount);
     }
 }

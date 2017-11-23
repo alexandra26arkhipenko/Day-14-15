@@ -1,78 +1,105 @@
 ﻿using System;
 
-namespace BusinessLogic.Interfaces
+namespace BusinessLogic.Interfaces.Entities
 {
     public abstract class Account
     {
-        private string id;
-        private string firstName;
-        private string lastName;
-
-        #region properties
-        public string Id
-        {
-            get { return id; }
-
-            set
-            {
-                if(string.IsNullOrEmpty(value))
-                {
-                    throw new ArgumentNullException();
-                }
-                id = value;
-            }
-        }
-        public string FirstName
-        {
-            get { return firstName; }
-
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                {
-                    throw new ArgumentNullException();
-                }
-                firstName = value;
-            }
-        }
-        public string LastName
-        {
-            get { return lastName; }
-
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                {
-                    throw new ArgumentNullException();
-                }
-                id = value;
-            }
-        }
-        public decimal Amount { get; set; }
-        public int Points { get; set; }
-        public int BonusValue { get; set; }
-        #endregion
+        private string _firstName;
+        private string _id;
+        private string _lastName;
 
         #region Constructor
-        public Account(string id, string firstName, string lastName, decimal amount, int points)
+
+        protected Account(string id, string firstName, string lastName, decimal amount, int points)
         {
             Id = id;
             FirstName = firstName;
             LastName = lastName;
             Amount = amount;
             Points = points;
-           
         }
-#endregion
+
+        #endregion
+
         public override string ToString()
         {
-            return String.Format("Account №{0}\n Owner: {1} {2} \n Amount: {3}$  points:{4} ",
-                Id, FirstName, LastName, Amount, Points); 
+            return string.Format("Account №{0}\n Owner: {1} {2} \n Amount: {3}$  points:{4} ",
+                Id, FirstName, LastName, Amount, Points);
         }
 
-        public abstract int CalculatePointsForAddAmount(decimal amount, int bonusValue);
-        public abstract int CalculatePointsForDivAmount(decimal amount, int bonusValue);
+        public abstract int CalculatePointsForAddAmount(int bonusValue);
+        public abstract int CalculatePointsForDivAmount(int bonusValue);
 
-            
+        public void AddMoney(decimal money)
+        {
+            if (money <= 0)
+            {
+                throw new ArgumentException(nameof(money));
+            }
+
+            Amount += money;
+            Points += CalculatePointsForAddAmount(BonusValue);
+        }
+
+        public void DivMoney(decimal money)
+        {
+            if (money <= 0)
+            {
+                throw new ArgumentException(nameof(money));
+            }
+
+            if (Amount <= money)
+            {
+                throw new ArgumentException(nameof(money));
+            }
+
+            Amount -= money;
+            Points -= CalculatePointsForAddAmount(BonusValue);
+        }
+
+        #region properties
+
+        public string Id
+        {
+            get => _id;
+
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                    throw new ArgumentNullException();
+                _id = value;
+            }
+        }
+
+        public string FirstName
+        {
+            get => _firstName;
+
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                    throw new ArgumentNullException();
+                _firstName = value;
+            }
+        }
+
+        public string LastName
+        {
+            get => _lastName;
+
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                    throw new ArgumentNullException();
+                _lastName = value;
+            }
+        }
+
+        public decimal Amount { get; set; }
+        public int Points { get; set; }
+        public int BonusValue { get; set; }
+
+        #endregion
+
     }
 }

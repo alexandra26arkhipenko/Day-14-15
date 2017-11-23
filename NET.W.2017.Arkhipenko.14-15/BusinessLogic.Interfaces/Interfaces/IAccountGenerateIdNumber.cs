@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace BusinessLogic.Interfaces
+﻿namespace BusinessLogic.Interfaces.Interfaces
 {
-    interface IAccountGenerateIdNumber
+    public interface IAccountGenerateIdNumber
     {
+        string GenerateId();
     }
 }
