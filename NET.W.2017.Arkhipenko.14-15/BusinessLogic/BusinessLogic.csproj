@@ -5,11 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Mappers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\BusinessLogic.Interfaces\BusinessLogic.Interfaces.csproj" />
+    <ProjectReference Include="..\DataAccessLayer.Interfaces\DataAccessLayer.Interfaces.csproj" />
   </ItemGroup>
 
 </Project>

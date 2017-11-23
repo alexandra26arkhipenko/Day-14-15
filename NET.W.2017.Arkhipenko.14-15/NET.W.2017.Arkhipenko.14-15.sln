@@ -13,8 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogic.Test", "Busin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{FFC84289-880F-46B2-9DF1-08A103FF40ED}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLayer.Fake", "DataAccessLayer.Fake\DataAccessLayer.Fake.csproj", "{48D10FA4-5D0C-4E15-8EDA-5BBBB2A78245}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLayer.Interfaces", "DataAccessLayer.Interfaces\DataAccessLayer.Interfaces.csproj", "{96EF0F6D-55E8-4E4F-9626-EE3159402621}"
 EndProject
 Global
@@ -43,10 +41,6 @@ Global
 		{FFC84289-880F-46B2-9DF1-08A103FF40ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFC84289-880F-46B2-9DF1-08A103FF40ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFC84289-880F-46B2-9DF1-08A103FF40ED}.Release|Any CPU.Build.0 = Release|Any CPU
-		{48D10FA4-5D0C-4E15-8EDA-5BBBB2A78245}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{48D10FA4-5D0C-4E15-8EDA-5BBBB2A78245}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{48D10FA4-5D0C-4E15-8EDA-5BBBB2A78245}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{48D10FA4-5D0C-4E15-8EDA-5BBBB2A78245}.Release|Any CPU.Build.0 = Release|Any CPU
 		{96EF0F6D-55E8-4E4F-9626-EE3159402621}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{96EF0F6D-55E8-4E4F-9626-EE3159402621}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96EF0F6D-55E8-4E4F-9626-EE3159402621}.Release|Any CPU.ActiveCfg = Release|Any CPU
