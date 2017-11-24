@@ -24,7 +24,7 @@ namespace ConsolePL
             Console.WriteLine("Account1 id: " + account1);
 
             Console.WriteLine(new string('_', 50));
-            var account2 = accountService.CreateAccount(AccountType.Gold, "Maria", "Gruz", 50);
+            var account2 = accountService.CreateAccount(AccountType.Gold, "Maria", "Gruz", 500);
             Console.WriteLine("Account1 id: " + account2);
             
             accountService.DivMoney(account2, 40);
@@ -35,7 +35,7 @@ namespace ConsolePL
             var account3 = accountService.CreateAccount(AccountType.Platinum, "Patric", "Gomer", 500);
             Console.WriteLine("Account1 id: " + account3);
 
-            accountService.DivMoney(account2, 70);
+            accountService.DivMoney(account3, 70);
             Console.WriteLine("Account1 id: " + account3);
 
             Console.ReadKey();

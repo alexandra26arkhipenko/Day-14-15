@@ -10,10 +10,12 @@ namespace DataAccessLayer.Repository
 {
     public class BinaryFile : IRepository
     {
+        #region private fields
         private readonly string _path;
         private readonly List<DalAccount> _accounts = new List<DalAccount>();
+        #endregion
 
-
+        #region ctor
         public BinaryFile(string path)
         {
             if (string.IsNullOrEmpty(path))
@@ -24,7 +26,13 @@ namespace DataAccessLayer.Repository
             _path = path;
 
         }
+        #endregion
 
+        #region public
+        /// <summary>
+        /// add account to file
+        /// </summary>
+        /// <param name="account">account that we add</param>
         public void AddAccount(DalAccount account)
         {
             if (ReferenceEquals(account, null))
@@ -35,6 +43,10 @@ namespace DataAccessLayer.Repository
             _accounts.Add(account);
         }
 
+        /// <summary>
+        /// Remove account from file
+        /// </summary>
+        /// <param name="account">account that is removing</param>
         public void RemoveAccount(DalAccount account)
         {
             if (ReferenceEquals(account, null))
@@ -46,7 +58,10 @@ namespace DataAccessLayer.Repository
             AppendAccountsToFile(_accounts);
         }
 
-
+        /// <summary>
+        /// returns all accounts from file
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<DalAccount> GetAccounts()
         {
             List<DalAccount> accounts = new List<DalAccount>();
@@ -63,6 +78,10 @@ namespace DataAccessLayer.Repository
             return accounts;
         }
 
+        /// <summary>
+        /// overwriting file, update account
+        /// </summary>
+        /// <param name="account">account that is updating</param>
         public void UpdateAccount(DalAccount account)
         {
             if (ReferenceEquals(account, null))
@@ -74,7 +93,9 @@ namespace DataAccessLayer.Repository
             _accounts.Add(account);
             AppendAccountsToFile(_accounts);
         }
+        #endregion
 
+        #region private
         private void AppendAccountToFile(DalAccount account)
         {
             using (var bw = new BinaryWriter(File.Open(_path, FileMode.Append,
@@ -122,5 +143,6 @@ namespace DataAccessLayer.Repository
                 Points = points
             };
         }
+#endregion
     }
 }
