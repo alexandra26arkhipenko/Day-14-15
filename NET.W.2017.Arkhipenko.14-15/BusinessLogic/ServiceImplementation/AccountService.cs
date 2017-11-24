@@ -81,7 +81,16 @@ namespace BusinessLogic.ServiceImplementation
             _accountRepsitory.AddAccount(account.ConvertToDalAccount());
             return account;
         }
-#endregion
+
+        public Account CreateAccount(AccountType accountType, string firstName, string lastName, decimal amount, IAccountGenerateIdNumber accountGenerateIdNumberNotField)
+        {
+            var account = CreateAccount(TypeOfAccount(accountType), accountGenerateIdNumberNotField.GenerateId(), firstName,
+                lastName, amount, GetBonuses(accountType));
+
+            _accountRepsitory.AddAccount(account.ConvertToDalAccount());
+            return account;
+        }
+        #endregion
 
         #region private 
         private Account CreateAccount(Type accountType, string id, string firstName, string lastName, decimal amount,

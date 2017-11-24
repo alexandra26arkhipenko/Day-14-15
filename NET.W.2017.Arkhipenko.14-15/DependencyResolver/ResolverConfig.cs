@@ -1,9 +1,8 @@
-﻿using BusinessLogic.Interfaces.Entities;
+﻿
 using BusinessLogic.Interfaces.Interfaces;
 using BusinessLogic.ServiceImplementation;
 using DataAccessLayer.Interfaces.IRepository;
 using DataAccessLayer.Repository;
-using DataAccessLayer;
 using Ninject;
 
 namespace DependencyResolver

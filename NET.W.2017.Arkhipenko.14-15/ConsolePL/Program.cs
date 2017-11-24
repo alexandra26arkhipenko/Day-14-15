@@ -8,7 +8,9 @@ namespace ConsolePL
 {
     class Program
     {
+        
         private static readonly IKernel NinjectKernel;
+
 
         static Program()
         {
@@ -17,6 +19,7 @@ namespace ConsolePL
         }
         static void Main()
         {
+            IAccountGenerateIdNumber accountGenerateIdNumber;
             var accountService = NinjectKernel.Get<IAccountService>();
             var account1 = accountService.CreateAccount(AccountType.Base, "Alex", "Smith", 100);
             Console.WriteLine("Account1 id: " + account1);
