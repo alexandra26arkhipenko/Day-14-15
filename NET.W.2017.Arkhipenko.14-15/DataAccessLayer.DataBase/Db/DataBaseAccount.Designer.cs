@@ -1,4 +1,4 @@
-﻿// Создание кода T4 для модели "E:\Учеба\EPAM\Day-14-15\NET.W.2017.Arkhipenko.14-15\DataAccessLayer.DataBase\DataBaseAccount.edmx" включено. 
+﻿// Создание кода T4 для модели "E:\Учеба\EPAM\Day-14-15\NET.W.2017.Arkhipenko.14-15\DataAccessLayer.DataBase\Db\DataBaseAccount.edmx" включено. 
 // Чтобы включить формирование кода прежних версий, измените значение свойства "Стратегия создания кода" конструктора
 // на "Legacy ObjectContext". Это свойство доступно в окне "Свойства", если модель
 // открыта в конструкторе.

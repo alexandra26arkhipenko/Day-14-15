@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DataAccessLayer.DataBase
+namespace DataAccessLayer.DataBase.Db
 {
     using System;
     

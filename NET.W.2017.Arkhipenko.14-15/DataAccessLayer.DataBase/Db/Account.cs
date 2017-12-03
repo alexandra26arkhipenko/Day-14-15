@@ -7,25 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DataAccessLayer.DataBase
+namespace DataAccessLayer.DataBase.Db
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class AccountOwner
+    public partial class Account
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public AccountOwner()
-        {
-            this.Account = new HashSet<Account>();
-        }
+        public string AccountId { get; set; }
+        public Nullable<decimal> Amount { get; set; }
+        public Nullable<int> Points { get; set; }
+        public Nullable<int> AccountOwnerId { get; set; }
+        public Nullable<int> AccountTypeId { get; set; }
     
-        public int AccountOwnerId { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Email { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Account> Account { get; set; }
+        public virtual AccountOwner AccountOwner { get; set; }
+        public virtual AccountType AccountType { get; set; }
     }
 }
