@@ -4,8 +4,8 @@ namespace BusinessLogic.Interfaces.Entities
 {
     public class BaseAccount : Account
     {
-        public BaseAccount(string id, string firstName, string lastName, decimal amount, int points)
-        :base(id, firstName, lastName, amount, points)
+        public BaseAccount(string id, string firstName, string lastName, decimal amount, int points, string email)
+        :base(id, firstName, lastName, amount, points, email)
         {
             BonusValue = 1;
         }

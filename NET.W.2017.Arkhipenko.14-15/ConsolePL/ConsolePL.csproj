@@ -64,9 +64,9 @@
       <Project>{636161d9-5129-477c-8333-68d19000922a}</Project>
       <Name>BusinessLogic.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DependencyResolver\DependencyResolver.csproj">
-      <Project>{9821ac81-a4c2-4559-abd3-40ed2e9fa7c3}</Project>
-      <Name>DependencyResolver</Name>
+    <ProjectReference Include="..\DepandencyResolver\DepandencyResolver.csproj">
+      <Project>{f2170948-9518-4099-8d25-5871fa83054e}</Project>
+      <Name>DepandencyResolver</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

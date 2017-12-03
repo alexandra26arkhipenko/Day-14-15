@@ -1,4 +1,6 @@
 ﻿using System.Data.Entity;
+using DataAccessLayer.DataBase.Db;
+
 
 namespace DataAccessLayer.DataBase
 {

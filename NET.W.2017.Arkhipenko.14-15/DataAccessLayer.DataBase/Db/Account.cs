@@ -15,8 +15,8 @@ namespace DataAccessLayer.DataBase.Db
     public partial class Account
     {
         public string AccountId { get; set; }
-        public Nullable<decimal> Amount { get; set; }
-        public Nullable<int> Points { get; set; }
+        public decimal Amount { get; set; }
+        public int Points { get; set; }
         public Nullable<int> AccountOwnerId { get; set; }
         public Nullable<int> AccountTypeId { get; set; }
     

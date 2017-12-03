@@ -14,7 +14,7 @@ namespace DataAccessLayer.DataBase.Db
     
     public partial class AccountType
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+       
         public AccountType()
         {
             this.Account = new HashSet<Account>();
@@ -23,7 +23,7 @@ namespace DataAccessLayer.DataBase.Db
         public string AccountType1 { get; set; }
         public int AccountTypeId { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+       
         public virtual ICollection<Account> Account { get; set; }
     }
 }

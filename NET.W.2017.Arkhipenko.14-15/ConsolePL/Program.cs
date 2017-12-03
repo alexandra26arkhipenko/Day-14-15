@@ -1,6 +1,6 @@
 ﻿using System;
 using BusinessLogic.Interfaces.Interfaces;
-using DependencyResolver;
+using DepandencyResolver;
 using Ninject;
 
 
@@ -21,13 +21,13 @@ namespace ConsolePL
         {
             IAccountGenerateIdNumber accountGenerateIdNumber;
             var accountService = NinjectKernel.Get<IAccountService>();
-            var account1 = accountService.CreateAccount(AccountType.Base, "Alex", "Smith", 100);
+            var account1 = accountService.CreateAccount(AccountType.Base, "Alex", "Smith", 100, "alex2568@gmail.com");
             Console.WriteLine("Account1 id: " + account1);
             accountService.AddMoney(account1, 50);
             Console.WriteLine("Account1 id: " + account1);
 
             Console.WriteLine(new string('_', 50));
-            var account2 = accountService.CreateAccount(AccountType.Gold, "Maria", "Gruz", 500);
+            var account2 = accountService.CreateAccount(AccountType.Gold, "Maria", "Gruz", 500, "masha25478@gmail.com");
             Console.WriteLine("Account1 id: " + account2);
             
             accountService.DivMoney(account2, 40);
@@ -35,7 +35,7 @@ namespace ConsolePL
 
 
             Console.WriteLine(new string('_', 50));
-            var account3 = accountService.CreateAccount(AccountType.Platinum, "Patric", "Gomer", 500);
+            var account3 = accountService.CreateAccount(AccountType.Platinum, "Patric", "Gomer", 500, "gomerfgj68@gmail.com");
             Console.WriteLine("Account1 id: " + account3);
 
             accountService.DivMoney(account3, 70);

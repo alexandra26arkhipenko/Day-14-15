@@ -10,6 +10,6 @@ namespace BusinessLogic.Interfaces.Interfaces
         void DivMoney(Account account, decimal money);
         void CloseAccout(Account account);
         //IEnumerable<Account> GetAllAccounts();
-        Account CreateAccount(AccountType accountType, string firstName, string lastName, decimal amount);
+        Account CreateAccount(AccountType accountType, string firstName, string lastName, decimal amount, string email);
     }
 }

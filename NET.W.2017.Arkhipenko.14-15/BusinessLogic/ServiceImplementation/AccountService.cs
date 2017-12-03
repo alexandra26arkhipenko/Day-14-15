@@ -73,19 +73,19 @@ namespace BusinessLogic.ServiceImplementation
         /// <param name="lastName">owner lastname</param>
         /// <param name="amount"></param>
         /// <returns>new account</returns>
-        public Account CreateAccount(AccountType accountType, string firstName, string lastName, decimal amount)
+        public Account CreateAccount(AccountType accountType, string firstName, string lastName, decimal amount, string email)
         {
             var account = CreateAccount(TypeOfAccount(accountType), _accountGenerateIdNumber.GenerateId(), firstName,
-                lastName, amount, GetBonuses(accountType));
+                lastName, amount,  GetBonuses(accountType), email);
 
             _accountRepsitory.AddAccount(account.ConvertToDalAccount());
             return account;
         }
 
-        public Account CreateAccount(AccountType accountType, string firstName, string lastName, decimal amount, IAccountGenerateIdNumber accountGenerateIdNumberNotField)
+        public Account CreateAccount(AccountType accountType, string firstName, string lastName, decimal amount, string email, IAccountGenerateIdNumber accountGenerateIdNumberNotField)
         {
             var account = CreateAccount(TypeOfAccount(accountType), accountGenerateIdNumberNotField.GenerateId(), firstName,
-                lastName, amount, GetBonuses(accountType));
+                lastName, amount,  GetBonuses(accountType), email);
 
             _accountRepsitory.AddAccount(account.ConvertToDalAccount());
             return account;
@@ -94,9 +94,9 @@ namespace BusinessLogic.ServiceImplementation
 
         #region private 
         private Account CreateAccount(Type accountType, string id, string firstName, string lastName, decimal amount,
-            int bonusPoints)
+            int bonusPoints, string email)
         {
-            return (Account) Activator.CreateInstance(accountType, id, firstName, lastName, amount, bonusPoints);
+            return (Account) Activator.CreateInstance(accountType, id, firstName, lastName, amount, bonusPoints, email);
         }
 
         private static int GetBonuses(AccountType accountType)

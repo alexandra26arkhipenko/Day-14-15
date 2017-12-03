@@ -2,8 +2,8 @@
 {
     public class GoldAccount :Account 
     {
-        public GoldAccount(string id, string firstName, string lastName, decimal amount, int points)
-        :base(id, firstName, lastName, amount, points)
+        public GoldAccount(string id, string firstName, string lastName, decimal amount, int points, string email)
+        :base(id, firstName, lastName, amount, points, email)
         {
             BonusValue = 2;
         }

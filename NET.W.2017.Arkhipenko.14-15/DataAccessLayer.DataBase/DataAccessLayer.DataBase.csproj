@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountRepositoryDB.cs" />
     <Compile Include="Db\Account.cs">
       <DependentUpon>DataBaseAccount.tt</DependentUpon>
     </Compile>
@@ -112,6 +113,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccessLayer.Interfaces\DataAccessLayer.Interfaces.csproj">
+      <Project>{96ef0f6d-55e8-4e4f-9626-ee3159402621}</Project>
+      <Name>DataAccessLayer.Interfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

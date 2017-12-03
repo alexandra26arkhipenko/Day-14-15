@@ -8,17 +8,19 @@ namespace BusinessLogic.Interfaces.Entities
         private string _firstName;
         private string _id;
         private string _lastName;
+        private string _email;
         #endregion
 
         #region ctor
 
-        protected Account(string id, string firstName, string lastName, decimal amount, int points)
+        protected Account(string id, string firstName, string lastName, decimal amount, int points, string email)
         {
             Id = id;
             FirstName = firstName;
             LastName = lastName;
             Amount = amount;
             Points = points;
+            Email = email;
         }
 
         #endregion
@@ -114,6 +116,18 @@ namespace BusinessLogic.Interfaces.Entities
                 if (string.IsNullOrEmpty(value))
                     throw new ArgumentNullException();
                 _lastName = value;
+            }
+        }
+
+        public string Email
+        {
+            get => _email;
+
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                    throw new ArgumentNullException();
+                _email = value;
             }
         }
 

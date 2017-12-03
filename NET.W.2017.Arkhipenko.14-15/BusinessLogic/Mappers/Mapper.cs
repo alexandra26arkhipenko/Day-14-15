@@ -14,12 +14,13 @@ namespace BusinessLogic.Mappers
         /// <returns>Instance of Account</returns>
         public static Account ConvertToAccount(this DalAccount dalAccount) =>
             (Account)Activator.CreateInstance(
-                dalAccount.AccountType,
+                GetAccountType(dalAccount.AccountType),
                 dalAccount.Id,
                 dalAccount.FirstName,
                 dalAccount.LastName,
                 dalAccount.Amount,
-                dalAccount.Points);
+                dalAccount.Points,
+                dalAccount.Email);
 
         /// <summary>
         /// Transform Account to DalAccount
@@ -29,13 +30,29 @@ namespace BusinessLogic.Mappers
         public static DalAccount ConvertToDalAccount(this Account account) =>
             new DalAccount
             {
-                AccountType = account.GetType(),
+                AccountType = account.GetType().Name,
                 Points = account.Points,
                 Amount = account.Amount,
                 Id = account.Id,
                 FirstName = account.FirstName,
-                LastName = account.LastName
+                LastName = account.LastName,
+                Email = account.Email
             };
+
+        private static Type GetAccountType(string type)
+        {
+            if (type.Contains("Gold"))
+            {
+                return typeof(GoldAccount);
+            }
+
+            if (type.Contains("Platinum"))
+            {
+                return typeof(PlatinumAccount);
+            }
+
+            return typeof(BaseAccount);
+        }
     }
 
 
