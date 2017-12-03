@@ -12,6 +12,7 @@
     <ProjectReference Include="..\BusinessLogic.Interfaces\BusinessLogic.Interfaces.csproj" />
     <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj" />
     <ProjectReference Include="..\DataAccessLayer.Interfaces\DataAccessLayer.Interfaces.csproj" />
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.BinaryFile.csproj" />
     <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj" />
   </ItemGroup>
 

@@ -8,7 +8,7 @@ using DataAccessLayer.Interfaces.IRepository;
 
 namespace DataAccessLayer.Repository
 {
-    public class BinaryFile : IRepository
+    public class AccountRepositoryBF : IRepository
     {
         #region private fields
         private readonly string _path;
@@ -16,7 +16,7 @@ namespace DataAccessLayer.Repository
         #endregion
 
         #region ctor
-        public BinaryFile(string path)
+        public AccountRepositoryBF(string path)
         {
             if (string.IsNullOrEmpty(path))
             {
