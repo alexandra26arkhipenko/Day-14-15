@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{45678B57-8795-42DC-840E-FE33CBEDF078}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <RootNamespace>DataAccessLayer.DataBase</RootNamespace>
     <AssemblyName>DataAccessLayer.DataBase</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -51,11 +54,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountContext.cs" />
     <Compile Include="AccountRepositoryDB.cs" />
     <Compile Include="Db\Account.cs">
       <DependentUpon>DataBaseAccount.tt</DependentUpon>
     </Compile>
-    <Compile Include="AccountContext.cs" />
     <Compile Include="Db\AccountOwner.cs">
       <DependentUpon>DataBaseAccount.tt</DependentUpon>
     </Compile>

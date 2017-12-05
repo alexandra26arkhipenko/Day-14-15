@@ -9,7 +9,7 @@ namespace ConsolePL
     class Program
     {
         
-        private static readonly IKernel NinjectKernel;
+        private static IKernel NinjectKernel;
 
 
         static Program()
@@ -17,7 +17,7 @@ namespace ConsolePL
             NinjectKernel = new StandardKernel();
             NinjectKernel.ConfigurateResolver();
         }
-        static void Main()
+        public static void Main()
         {
             IAccountGenerateIdNumber accountGenerateIdNumber;
             var accountService = NinjectKernel.Get<IAccountService>();
