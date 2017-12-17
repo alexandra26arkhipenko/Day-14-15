@@ -60,9 +60,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BusinessLogic.Interfaces\BusinessLogic.Interfaces.csproj">
+    <ProjectReference Include="..\BusinessLogic.Interfaces\BusinessLogicLayer.Interfaces.csproj">
       <Project>{636161d9-5129-477c-8333-68d19000922a}</Project>
-      <Name>BusinessLogic.Interfaces</Name>
+      <Name>BusinessLogicLayer.Interfaces</Name>
     </ProjectReference>
     <ProjectReference Include="..\DepandencyResolver\DepandencyResolver.csproj">
       <Project>{f2170948-9518-4099-8d25-5871fa83054e}</Project>

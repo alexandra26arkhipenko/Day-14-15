@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BusinessLogic.Interfaces\BusinessLogic.Interfaces.csproj" />
+    <ProjectReference Include="..\BusinessLogic.Interfaces\BusinessLogicLayer.Interfaces.csproj" />
     <ProjectReference Include="..\DataAccessLayer.Interfaces\DataAccessLayer.Interfaces.csproj" />
   </ItemGroup>
 
