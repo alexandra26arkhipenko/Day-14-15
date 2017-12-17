@@ -1,0 +1,142 @@
+﻿@model MVC.Models.AccountStatusModel
+
+@{
+    ViewBag.Title = "Account operations";
+}
+<style type="text/css">.btn-custom { }</style>
+
+<h2 style="text-align: center">Account operations</h2>
+
+@using (Html.BeginForm("AddMoney", "Account", new AjaxOptions
+{
+    UpdateTargetId = "results",
+    LoadingElementId = "loading",
+    LoadingElementDuration = 100
+}))
+{
+    <div style="text-align: center">
+        <button type="submit" class="btn-custom btn-primary btn-lg">Deposit money</button> <br />
+    </div>
+}
+
+@using (Html.BeginForm("DivMoney", "Account", new AjaxOptions
+{
+    UpdateTargetId = "results",
+    LoadingElementId = "loading",
+    LoadingElementDuration = 100
+}))
+{
+    <div style="text-align: center">
+        <button type="submit" class="btn-custom btn-primary btn-lg">Withdraw money</button> <br />
+    </div>
+}
+
+@using (Html.BeginForm("GetAccountStatus", "Account", new AjaxOptions
+{
+    UpdateTargetId = "results",
+    LoadingElementId = "loading",
+    LoadingElementDuration = 100
+}))
+{
+    <div style="text-align: center">
+        <button type="submit" class="btn-custom btn-primary btn-lg">Get account status</button> <br />
+    </div>
+}
+
+@using (Html.BeginForm("TransferAmount", "Account", new AjaxOptions
+{
+    UpdateTargetId = "results",
+    LoadingElementId = "loading",
+    LoadingElementDuration = 100
+}))
+{
+    <div style="text-align: center">
+        <button type="submit" class="btn-custom btn-primary btn-lg">Transfer amount</button> <br />
+    </div>
+}
+
+@using (Html.BeginForm("CloseAccount", "Account", new AjaxOptions
+{
+    UpdateTargetId = "results",
+    LoadingElementId = "loading",
+    LoadingElementDuration = 100
+}))
+{
+    <div style="text-align: center">
+        <button type="submit" class="btn-custom btn-primary btn-lg" style="margin-bottom: 0;">Close account</button> <br />
+    </div>
+}
+
+<div id="results">
+    @{
+        if ((bool)ViewBag.IsAccountStatus)
+        {
+            ViewBag.IsAccountStatus = false;
+            <div>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Type)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Type)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.AccountId)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.AccountId)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.FirstName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.FirstName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.SecondName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.SecondName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Amount)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Amount)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.BonusPoints)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.BonusPoints)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Email)
+                    </dd>
+
+                </dl>
+            </div>
+        }
+    }
+</div>
+
+<div id="loading" style="display: none; color: red; font-weight: bold;">
+    <p>Loading...</p>
+</div>

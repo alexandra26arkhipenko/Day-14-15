@@ -79,6 +79,7 @@ namespace BusinessLogic.Interfaces.Entities
             Points -= CalculatePointsForAddAmount(BonusValue);
         }
 
+
 #endregion
 
         #region properties

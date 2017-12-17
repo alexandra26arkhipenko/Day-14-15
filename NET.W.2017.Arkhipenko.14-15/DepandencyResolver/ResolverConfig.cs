@@ -16,6 +16,7 @@ namespace DepandencyResolver
             //kernel.Bind<IRepository>().To<AccountRepositoryBF>().WithConstructorArgument("account.bin");
             kernel.Bind<IRepository>().To<AccountRepositoryDB>();
             kernel.Bind<IAccountGenerateIdNumber>().To<AccountGenerateIdNumber>().InSingletonScope();
+            kernel.Bind<IEmailService>().To<EmailService>().InSingletonScope();
         }
     }
 }

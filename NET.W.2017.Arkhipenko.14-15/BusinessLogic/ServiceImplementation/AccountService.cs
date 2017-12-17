@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using BusinessLogic.Interfaces.Entities;
 using BusinessLogic.Interfaces.Interfaces;
 using BusinessLogic.Mappers;
@@ -40,6 +41,15 @@ namespace BusinessLogic.ServiceImplementation
             _accountRepsitory.UpdateAccount(account.ConvertToDalAccount());
         }
 
+        public void AddMoney(string accountId, decimal money)
+        {
+            if (string.IsNullOrEmpty(accountId))
+                throw new ArgumentException(nameof(accountId));
+            var account = _accountRepsitory.GetAccounts().FirstOrDefault(acc => acc.Id == accountId);
+            account.ConvertToAccount().AddMoney(money);
+            _accountRepsitory.UpdateAccount(account);
+        }
+
         /// <summary>
         /// Withdraw money from accout's amount and add bonus points
         /// </summary>
@@ -53,6 +63,15 @@ namespace BusinessLogic.ServiceImplementation
             _accountRepsitory.UpdateAccount(account.ConvertToDalAccount());
         }
 
+        public void DivMoney(string accountId, decimal money)
+        {
+            if (string.IsNullOrEmpty(accountId))
+                throw new ArgumentException(nameof(accountId));
+            var account = _accountRepsitory.GetAccounts().FirstOrDefault(acc => acc.Id == accountId);
+            account.ConvertToAccount().DivMoney(money);
+            _accountRepsitory.UpdateAccount(account);
+        }
+
 
         /// <summary>
         /// Remove account 
@@ -63,6 +82,31 @@ namespace BusinessLogic.ServiceImplementation
             if (ReferenceEquals(account, null))
                 throw new ArgumentException(nameof(account));
             _accountRepsitory.RemoveAccount(account.ConvertToDalAccount());
+        }
+
+        public void CloseAccout(string accountId)
+        {
+            if (string.IsNullOrEmpty(accountId))
+                throw new ArgumentException(nameof(accountId));
+            var account = _accountRepsitory.GetAccounts().FirstOrDefault(acc => acc.Id == accountId);
+            _accountRepsitory.RemoveAccount(account);
+        }
+
+        public string GetAccount(string accountId)
+        {
+            if (string.IsNullOrWhiteSpace(accountId))
+            {
+                throw new ArgumentException(nameof(accountId));
+            }
+
+            var accounts = _accountRepsitory.GetAccounts();
+            var account = accounts.FirstOrDefault(acc => acc.Id == accountId);
+            if (ReferenceEquals(account, null))
+            {
+                throw new ArgumentException($"Account with id {accountId} not found");
+            }
+
+            return account.ConvertToAccount().ToString();
         }
 
         /// <summary>
