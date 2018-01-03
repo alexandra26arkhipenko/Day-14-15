@@ -43,6 +43,7 @@ namespace BusinessLogic.Interfaces.Entities
         /// <returns></returns>
         public abstract int CalculatePointsForAddAmount(int bonusValue);
         public abstract int CalculatePointsForDivAmount(int bonusValue);
+        protected abstract bool IsValidBalance(decimal value);
 
         /// <summary>
         ///  Add money to accout's amount and add bonus points

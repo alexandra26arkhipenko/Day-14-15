@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using BusinessLogic.Interfaces.Entities;
 using DataAccessLayer.Interfaces;
 
@@ -38,6 +40,28 @@ namespace BusinessLogic.Mappers
                 LastName = account.LastName,
                 Email = account.Email
             };
+
+        public static IEnumerable<DalAccount> ToDalAccounts(this IEnumerable<Account> accounts)
+            => new List<DalAccount>(accounts.Select(account => new DalAccount
+            {
+                AccountType = account.GetType().Name,
+                Points = account.Points,
+                Amount = account.Amount,
+                Id = account.Id,
+                FirstName = account.FirstName,
+                LastName = account.LastName,
+                Email = account.Email
+            }));
+
+        public static IEnumerable<Account> ToBllAccounts(this IEnumerable<DalAccount> accounts)
+            => new List<Account>(accounts.Select(account => (Account)Activator.CreateInstance(
+                GetAccountType(account.AccountType),
+                account.Id,
+                account.FirstName,
+                account.LastName,
+                account.Amount,
+                account.Points)));
+
 
         private static Type GetAccountType(string type)
         {

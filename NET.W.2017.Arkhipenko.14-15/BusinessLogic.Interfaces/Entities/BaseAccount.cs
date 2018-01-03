@@ -13,6 +13,7 @@ namespace BusinessLogic.Interfaces.Entities
         public override string ToString() => "BaseAccount" + base.ToString();
         public override int CalculatePointsForAddAmount(int bonusValue) => 10 * bonusValue;
         public override int CalculatePointsForDivAmount(int bonusValue) => 10 * bonusValue;
-        
+        protected override bool IsValidBalance(decimal value)
+            => value >= 0;
     }
 }

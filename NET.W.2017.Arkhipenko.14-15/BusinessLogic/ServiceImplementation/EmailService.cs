@@ -30,11 +30,9 @@ namespace BusinessLogic.ServiceImplementation
                 IsBodyHtml = true
             };
 
-            var smtp = new SmtpClient("smtp.gmail.com")
-            {
-                Credentials = new NetworkCredential(mailData.From, mailData.FromPassword),
-                EnableSsl = true
-            };
+            var smtp = new SmtpClient("smtp.gmail.com", 587);
+            smtp.Credentials = new NetworkCredential(mailData.From, mailData.FromPassword);
+            smtp.EnableSsl = true;
 
             return Tuple.Create(email, smtp);
         }

@@ -16,14 +16,16 @@ namespace BusinessLogic.ServiceImplementation
 
         private readonly IAccountGenerateIdNumber _accountGenerateIdNumber;
         private readonly IRepository _accountRepsitory;
+        private readonly IEmailService _gmailService;
 
         #endregion
 
         #region ctor
-        public AccountService(IRepository accountRepsitory, IAccountGenerateIdNumber accountGenerateIdNumber)
+        public AccountService(IRepository accountRepsitory, IAccountGenerateIdNumber accountGenerateIdNumber, IEmailService gmailService)
         {
             _accountRepsitory = accountRepsitory;
             _accountGenerateIdNumber = accountGenerateIdNumber;
+            _gmailService = gmailService;
         }
         #endregion
 
@@ -124,6 +126,20 @@ namespace BusinessLogic.ServiceImplementation
 
             _accountRepsitory.AddAccount(account.ConvertToDalAccount());
             return account;
+        }
+
+        public void SendMail(string to, string message, string subject)
+        {
+            var data = new MailData
+            {
+                From = "vinnichekira@gmail.com",
+                To = to,
+                FromPassword = "mypassword",
+                Message = message,
+                Subject = subject
+            };
+
+            _gmailService.SendMail(data);
         }
 
         public Account CreateAccount(AccountType accountType, string firstName, string lastName, decimal amount, string email, IAccountGenerateIdNumber accountGenerateIdNumberNotField)

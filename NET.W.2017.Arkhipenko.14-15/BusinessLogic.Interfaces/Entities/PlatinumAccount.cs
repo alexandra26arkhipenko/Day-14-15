@@ -11,5 +11,7 @@
         public override string ToString() => "PlarimunAccount" + base.ToString();
         public override int CalculatePointsForAddAmount(int bonusValue) => 30 * bonusValue + 20;
         public override int CalculatePointsForDivAmount(int bonusValue) => 30 * bonusValue + 20;
+        protected override bool IsValidBalance(decimal value)
+            => value >= -5000;
     }
 }

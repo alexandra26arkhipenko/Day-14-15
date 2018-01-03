@@ -15,5 +15,6 @@ namespace BusinessLogic.Interfaces.Interfaces
         string GetAccount(string accountId);
         //IEnumerable<Account> GetAllAccounts();
         Account CreateAccount(AccountType accountType, string firstName, string lastName, decimal amount, string email);
+        void SendMail(string to, string message, string subject);
     }
 }
