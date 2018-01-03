@@ -132,7 +132,7 @@ namespace BusinessLogic.ServiceImplementation
         {
             var data = new MailData
             {
-                From = "vinnichekira@gmail.com",
+                From = "al26arkhipenko@gmail.com",
                 To = to,
                 FromPassword = "mypassword",
                 Message = message,
